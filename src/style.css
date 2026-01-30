@@ -152,11 +152,24 @@ body {
   overflow: hidden;
 }
 
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  object-fit: cover;
+}
+
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center, #2a0505 0%, #0a0a0a 70%);
-  z-index: 0;
+  background: radial-gradient(ellipse at center, rgba(42, 5, 5, 0.7) 0%, rgba(10, 10, 10, 0.85) 70%);
+  z-index: 1;
 }
 
 .hero-bg::before {
@@ -176,7 +189,7 @@ body {
 .blood-particles {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 2;
   pointer-events: none;
 }
 
