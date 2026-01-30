@@ -397,6 +397,38 @@ const merchItems = [
     image: '/merch-longsleeve.png',
     badge: 'New',
     available: true
+  },
+  {
+    name: 'CORE PHONE CASE',
+    description: 'Premium matte case with 3D Blood Core logo and gold orb accent',
+    price: '$32',
+    image: '/merch-phonecase.png',
+    badge: 'Hot',
+    available: true
+  },
+  {
+    name: 'ANIME POSTER',
+    description: 'Epic character battle poster featuring Blood Core heroes and villains',
+    price: '$25',
+    image: '/merch-poster.png',
+    badge: 'Fan Favorite',
+    available: true
+  },
+  {
+    name: 'CORE BACKPACK',
+    description: 'Premium black backpack with large embroidered Blood Core patch',
+    price: '$89',
+    image: '/merch-backpack.png',
+    badge: 'Premium',
+    available: true
+  },
+  {
+    name: 'SKATE DECK',
+    description: 'Custom deck with epic Blood Core anime artwork and drip effects',
+    price: '$95',
+    image: '/merch-skateboard.png',
+    badge: 'Limited',
+    available: true
   }
 ];
 
