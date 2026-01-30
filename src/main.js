@@ -235,4 +235,99 @@ document.addEventListener('DOMContentLoaded', () => {
     alert(`Thanks for subscribing! We'll keep ${email} updated on Blood Core news.`);
     form.reset();
   });
+
+  // Gallery functionality
+  renderGallery();
+  setupLightbox();
 });
+
+// Gallery data - production artwork
+const galleryImages = [
+  { src: '/Untitled_Artwork.jpeg', label: 'Character Study' },
+  { src: '/Untitled_Artwork 1.jpeg', label: 'Yorudan Design' },
+  { src: '/Untitled_Artwork 2.jpeg', label: 'Action Sketch' },
+  { src: '/Untitled_Artwork 3.jpeg', label: 'Scene Layout' },
+  { src: '/Untitled_Artwork 4.jpeg', label: 'Character Pose' },
+  { src: '/Untitled_Artwork 5.jpeg', label: 'Storyboard' },
+  { src: '/Untitled_Artwork 6.jpeg', label: 'Concept Art' },
+  { src: '/Untitled_Artwork 7.jpeg', label: 'Expression Sheet' },
+  { src: '/Untitled_Artwork 8.jpeg', label: 'Battle Scene' },
+  { src: '/Untitled_Artwork 9.jpeg', label: 'Power Study' },
+  { src: '/Untitled_Artwork 10.jpeg', label: 'Draft Sketch' },
+  { src: '/Untitled_Artwork 11.jpeg', label: 'Full Page' },
+  { src: '/Untitled_Artwork 12.jpeg', label: 'Character Art' },
+  { src: '/Untitled_Artwork 13.jpeg', label: 'Scene Design' },
+  { src: '/Untitled_Artwork 14.jpeg', label: 'Final Art' }
+];
+
+let currentImageIndex = 0;
+
+function renderGallery() {
+  const grid = document.getElementById('gallery-grid');
+  if (!grid) return;
+  
+  grid.innerHTML = '';
+  
+  galleryImages.forEach((img, index) => {
+    const item = document.createElement('div');
+    item.className = 'gallery-item';
+    item.style.animationDelay = `${index * 0.1}s`;
+    item.innerHTML = `
+      <div class="gallery-frame" data-label="${img.label}">
+        <img src="${img.src}" alt="${img.label}" class="gallery-image" loading="lazy" />
+        <div class="gallery-sketch-marks"></div>
+      </div>
+    `;
+    item.addEventListener('click', () => openLightbox(index));
+    grid.appendChild(item);
+  });
+}
+
+function setupLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox) return;
+  
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+  const prevBtn = lightbox.querySelector('.lightbox-prev');
+  const nextBtn = lightbox.querySelector('.lightbox-next');
+  
+  closeBtn.addEventListener('click', closeLightbox);
+  prevBtn.addEventListener('click', () => navigateLightbox(-1));
+  nextBtn.addEventListener('click', () => navigateLightbox(1));
+  
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') navigateLightbox(-1);
+    if (e.key === 'ArrowRight') navigateLightbox(1);
+  });
+}
+
+function openLightbox(index) {
+  currentImageIndex = index;
+  const lightbox = document.getElementById('lightbox');
+  const img = lightbox.querySelector('.lightbox-image');
+  img.src = galleryImages[index].src;
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  lightbox.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function navigateLightbox(direction) {
+  currentImageIndex += direction;
+  if (currentImageIndex < 0) currentImageIndex = galleryImages.length - 1;
+  if (currentImageIndex >= galleryImages.length) currentImageIndex = 0;
+  
+  const lightbox = document.getElementById('lightbox');
+  const img = lightbox.querySelector('.lightbox-image');
+  img.src = galleryImages[currentImageIndex].src;
+}

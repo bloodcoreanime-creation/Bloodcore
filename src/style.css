@@ -782,6 +782,230 @@ body {
 }
 
 /* ========================================
+   PRODUCTION GALLERY SECTION
+   ======================================== */
+.gallery-section {
+  padding: var(--section-padding);
+  background: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 50px,
+      rgba(139, 0, 0, 0.03) 50px,
+      rgba(139, 0, 0, 0.03) 100px
+    );
+  pointer-events: none;
+}
+
+.gallery-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 50px;
+  font-style: italic;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  from {
+    transform: translateY(20px);
+  }
+}
+
+.gallery-item:nth-child(odd) {
+  transform: rotate(-2deg);
+}
+
+.gallery-item:nth-child(even) {
+  transform: rotate(2deg);
+}
+
+.gallery-item:nth-child(3n) {
+  transform: rotate(-1deg);
+}
+
+.gallery-item:hover {
+  transform: rotate(0deg) scale(1.05) !important;
+  z-index: 10;
+}
+
+.gallery-frame {
+  background: #1a1a1a;
+  padding: 15px 15px 40px 15px;
+  border-radius: 3px;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(139, 0, 0, 0.3);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.gallery-item:hover .gallery-frame {
+  box-shadow: 
+    0 20px 50px rgba(139, 0, 0, 0.4),
+    0 0 0 2px var(--crimson);
+}
+
+/* Tape effect */
+.gallery-frame::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  width: 60px;
+  height: 25px;
+  background: rgba(255, 220, 180, 0.7);
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-frame::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(20%) contrast(1.1);
+  transition: filter 0.3s ease;
+}
+
+.gallery-item:hover .gallery-image {
+  filter: grayscale(0%) contrast(1.2);
+}
+
+/* Sketch marks overlay */
+.gallery-sketch-marks {
+  position: absolute;
+  inset: 15px 15px 40px 15px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border: 2px dashed var(--crimson);
+}
+
+.gallery-item:hover .gallery-sketch-marks {
+  opacity: 0.5;
+}
+
+/* Lightbox */
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 9999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-lightbox.active {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-image {
+  max-width: 90%;
+  max-height: 85vh;
+  object-fit: contain;
+  border: 5px solid #1a1a1a;
+  box-shadow: 0 0 50px rgba(139, 0, 0, 0.5);
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  background: rgba(139, 0, 0, 0.8);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 15px 25px;
+  transition: all 0.3s ease;
+}
+
+.lightbox-close {
+  top: 20px;
+  right: 20px;
+  border-radius: 50%;
+  padding: 10px 20px;
+}
+
+.lightbox-prev {
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 5px;
+}
+
+.lightbox-next {
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 5px;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background: var(--crimson);
+  transform: scale(1.1);
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* ========================================
    FOOTER
    ======================================== */
 .footer {
