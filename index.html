@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/bloodcore-logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BLOOD CORE - Anime by Jacob Peters</title>
+    <meta name="description" content="Blood Core is an action-packed anime series following Yorudan, an 11-year-old who discovers he possesses the legendary Blood Core power. Created by Jacob Peters." />
+    <meta name="keywords" content="Blood Core, anime, Jacob Peters, Yorudan, action anime, Blood Core anime" />
+    <meta property="og:title" content="BLOOD CORE - Anime by Jacob Peters" />
+    <meta property="og:description" content="Discover the legendary Blood Core power. An original anime series by Jacob Peters." />
+    <meta property="og:image" content="/bloodcore-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <!-- Navigation -->
+      <nav class="navbar">
+        <div class="nav-logo">BLOOD CORE</div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#story">Story</a></li>
+          <li><a href="#characters">Characters</a></li>
+          <li><a href="#episodes">Episodes</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+      </nav>
+
+      <!-- Hero Section -->
+      <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="blood-particles" id="particles"></div>
+        <div class="hero-content">
+          <img src="/bloodcore-logo.png" alt="Blood Core Logo" class="hero-logo" />
+          <p class="hero-tagline">The rarest power. The darkest legacy.</p>
+          <a href="#story" class="cta-button">
+            <span>Discover the Legend</span>
+            <div class="button-glow"></div>
+          </a>
+        </div>
+        <div class="scroll-indicator">
+          <span>Scroll</span>
+          <div class="scroll-arrow"></div>
+        </div>
+      </section>
+
+      <!-- Story Section -->
+      <section id="story" class="story-section">
+        <div class="section-header">
+          <div class="core-icon"></div>
+          <h2>The Story</h2>
+          <div class="divider"></div>
+        </div>
+        <div class="story-content">
+          <div class="story-text">
+            <p class="story-intro">60 years ago, there was a man named <strong>Jakusan</strong> who possessed a godly power named <strong>Blood Core</strong>. It became legend.</p>
+            <p>Eleven-year-old <strong>Yorudan</strong> lives in a world where extraordinary powers manifest within a person's very core. Blood Core, the rarest and most mysterious, has eluded his family for generations.</p>
+            <p>Yorudan himself seems entirely normal, until a fit of rage at school unleashes a devastating power – <em>his blood itself becomes a weapon</em>.</p>
+            <p>Horrified and confused, Yorudan confesses to his parents. A flicker of recognition crosses their faces. They remember whispers of Yorudan's maternal grandfather, Jakusan, who possessed a power so volatile it became legend.</p>
+            <div class="power-reveal">
+              <h3>Blood Core Abilities</h3>
+              <ul class="abilities-list">
+                <li><span class="ability-icon">🩸</span> Manipulate blood as a weapon</li>
+                <li><span class="ability-icon">💭</span> Sense emotions</li>
+                <li><span class="ability-icon">🧠</span> Manipulate memories</li>
+                <li><span class="ability-icon">🔗</span> Forge temporary psychic links</li>
+              </ul>
+            </div>
+            <p class="story-hook">Is Yorudan destined for destruction, or can he master this power and become humanity's protector?</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Characters Section -->
+      <section id="characters" class="characters-section">
+        <div class="section-header">
+          <div class="core-icon"></div>
+          <h2>Characters</h2>
+          <div class="divider"></div>
+        </div>
+        <div class="character-categories">
+          <button class="category-btn active" data-category="heroes">Heroes</button>
+          <button class="category-btn" data-category="villains">Villains</button>
+          <button class="category-btn" data-category="mentors">Mentors</button>
+        </div>
+        <div class="characters-grid" id="characters-grid">
+          <!-- Characters will be dynamically inserted -->
+        </div>
+      </section>
+
+      <!-- Episodes Section -->
+      <section id="episodes" class="episodes-section">
+        <div class="section-header">
+          <div class="core-icon"></div>
+          <h2>Episodes</h2>
+          <div class="divider"></div>
+        </div>
+        <div class="season-tabs">
+          <button class="season-tab active" data-season="1">Season 1</button>
+          <button class="season-tab" data-season="2">Season 2</button>
+        </div>
+        <div class="episodes-timeline" id="episodes-timeline">
+          <!-- Episodes will be dynamically inserted -->
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact-section">
+        <div class="section-header">
+          <div class="core-icon"></div>
+          <h2>Join the Journey</h2>
+          <div class="divider"></div>
+        </div>
+        <div class="contact-content">
+          <p>Stay updated on Blood Core's development. Be the first to know about new episodes, artwork, and announcements.</p>
+          <form class="newsletter-form" id="newsletter-form">
+            <input type="email" placeholder="Enter your email" required />
+            <button type="submit">
+              <span>Subscribe</span>
+            </button>
+          </form>
+          <div class="creator-info">
+            <h3>Created by Jacob Peters</h3>
+            <p>Blood Core is an original anime concept bringing together action, mystery, and the bonds of family.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-logo">BLOOD CORE</div>
+          <p>&copy; 2024 Jacob Peters. All rights reserved.</p>
+          <p class="footer-tagline">This is just the beginning!</p>
+        </div>
+      </footer>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
