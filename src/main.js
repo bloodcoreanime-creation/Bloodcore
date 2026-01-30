@@ -335,68 +335,36 @@ function navigateLightbox(direction) {
 // Merch data - Blood Core branded items
 const merchItems = [
   {
-    name: 'Blood Core Logo Tee',
-    description: 'Premium black tee with Blood Core logo and crimson accents',
-    price: '$35',
-    emoji: '👕',
+    name: 'BLOOD CORE TEE',
+    description: 'Premium oversized black tee with dripping Blood Core logo and gold orb emblem',
+    price: '$45',
+    image: '/merch-tee.png',
     badge: 'Bestseller',
     available: true
   },
   {
-    name: 'Yorudan Character Tee',
-    description: 'Featuring Yorudan in battle stance with Blood Core power',
-    price: '$40',
-    emoji: '👕',
-    badge: 'New',
-    available: true
-  },
-  {
-    name: 'Core Power Hoodie',
-    description: 'Heavyweight hoodie with glowing core design on back',
-    price: '$65',
-    emoji: '🧥',
+    name: 'CORE POWER HOODIE',
+    description: 'Heavyweight streetwear hoodie with crimson Blood Core typography',
+    price: '$75',
+    image: '/merch-hoodie.png',
     badge: 'Limited',
     available: true
   },
   {
-    name: 'Blood Core Bomber Jacket',
-    description: 'Premium bomber with embroidered logos and inner lining art',
-    price: '$120',
-    emoji: '🧥',
-    badge: 'Premium',
-    available: true
-  },
-  {
-    name: 'Legacy Joggers',
-    description: 'Comfortable joggers with subtle Blood Core branding',
-    price: '$55',
-    emoji: '👖',
-    badge: '',
-    available: true
-  },
-  {
-    name: 'Core Snapback Hat',
-    description: 'Black snapback with embroidered Blood Core logo',
-    price: '$30',
-    emoji: '🧢',
-    badge: '',
-    available: true
-  },
-  {
-    name: 'M.E.F. Villain Tee',
-    description: 'Dark design featuring the M.E.F. organization crest',
-    price: '$40',
-    emoji: '👕',
+    name: 'BLOOD DRIP JOGGERS',
+    description: 'Signature joggers with dripping blood gradient from waist to ankles',
+    price: '$65',
+    image: '/merch-joggers.png',
     badge: 'New',
     available: true
   },
   {
-    name: 'Jakusan Legend Jacket',
-    description: 'Full-zip jacket honoring the legendary Blood Core master',
-    price: '$95',
-    emoji: '🧥',
-    badge: 'Coming Soon',
-    available: false
+    name: 'LEGACY BOMBER',
+    description: 'Premium satin bomber with embroidered Blood Core back design and gold trim',
+    price: '$135',
+    image: '/merch-bomber.png',
+    badge: 'Premium',
+    available: true
   }
 ];
 
@@ -412,7 +380,7 @@ function renderMerch() {
     card.style.animationDelay = `${index * 0.1}s`;
     card.innerHTML = `
       <div class="merch-image">
-        <span class="merch-preview">${item.emoji}</span>
+        <img src="${item.image}" alt="${item.name}" class="merch-photo" />
         ${item.badge ? `<span class="merch-badge">${item.badge}</span>` : ''}
       </div>
       <div class="merch-info">

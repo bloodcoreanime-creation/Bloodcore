@@ -1072,7 +1072,7 @@ body {
 
 .merch-image {
   width: 100%;
-  height: 280px;
+  height: 320px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1086,17 +1086,19 @@ body {
   position: absolute;
   inset: 0;
   background: radial-gradient(circle at center, rgba(139, 0, 0, 0.2) 0%, transparent 70%);
+  z-index: 1;
+  pointer-events: none;
 }
 
-.merch-preview {
-  font-size: 80px;
-  text-align: center;
-  filter: drop-shadow(0 0 20px rgba(139, 0, 0, 0.5));
-  transition: transform 0.3s ease;
+.merch-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
-.merch-card:hover .merch-preview {
-  transform: scale(1.1);
+.merch-card:hover .merch-photo {
+  transform: scale(1.05);
 }
 
 .merch-badge {
