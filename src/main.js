@@ -365,6 +365,38 @@ const merchItems = [
     image: '/merch-bomber.png',
     badge: 'Premium',
     available: true
+  },
+  {
+    name: 'CORE BUCKET HAT',
+    description: 'Embroidered bucket hat in black with Blood Core crimson logo',
+    price: '$38',
+    image: '/merch-bucket.png',
+    badge: 'Trending',
+    available: true
+  },
+  {
+    name: 'CROSSBODY BAG',
+    description: 'Compact sling bag with Blood Core patch and adjustable strap',
+    price: '$55',
+    image: '/merch-crossbody.png',
+    badge: 'Hot',
+    available: true
+  },
+  {
+    name: 'CORE SLIDES',
+    description: 'Luxury leather slides with embossed Blood Core logo and gold buckle',
+    price: '$68',
+    image: '/merch-slides.png',
+    badge: 'Premium',
+    available: true
+  },
+  {
+    name: 'DRIP LONG SLEEVE',
+    description: 'Black thermal with Blood Core drip text down both sleeves',
+    price: '$55',
+    image: '/merch-longsleeve.png',
+    badge: 'New',
+    available: true
   }
 ];
 
