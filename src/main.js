@@ -331,3 +331,104 @@ function navigateLightbox(direction) {
   const img = lightbox.querySelector('.lightbox-image');
   img.src = galleryImages[currentImageIndex].src;
 }
+
+// Merch data - Blood Core branded items
+const merchItems = [
+  {
+    name: 'Blood Core Logo Tee',
+    description: 'Premium black tee with Blood Core logo and crimson accents',
+    price: '$35',
+    emoji: '👕',
+    badge: 'Bestseller',
+    available: true
+  },
+  {
+    name: 'Yorudan Character Tee',
+    description: 'Featuring Yorudan in battle stance with Blood Core power',
+    price: '$40',
+    emoji: '👕',
+    badge: 'New',
+    available: true
+  },
+  {
+    name: 'Core Power Hoodie',
+    description: 'Heavyweight hoodie with glowing core design on back',
+    price: '$65',
+    emoji: '🧥',
+    badge: 'Limited',
+    available: true
+  },
+  {
+    name: 'Blood Core Bomber Jacket',
+    description: 'Premium bomber with embroidered logos and inner lining art',
+    price: '$120',
+    emoji: '🧥',
+    badge: 'Premium',
+    available: true
+  },
+  {
+    name: 'Legacy Joggers',
+    description: 'Comfortable joggers with subtle Blood Core branding',
+    price: '$55',
+    emoji: '👖',
+    badge: '',
+    available: true
+  },
+  {
+    name: 'Core Snapback Hat',
+    description: 'Black snapback with embroidered Blood Core logo',
+    price: '$30',
+    emoji: '🧢',
+    badge: '',
+    available: true
+  },
+  {
+    name: 'M.E.F. Villain Tee',
+    description: 'Dark design featuring the M.E.F. organization crest',
+    price: '$40',
+    emoji: '👕',
+    badge: 'New',
+    available: true
+  },
+  {
+    name: 'Jakusan Legend Jacket',
+    description: 'Full-zip jacket honoring the legendary Blood Core master',
+    price: '$95',
+    emoji: '🧥',
+    badge: 'Coming Soon',
+    available: false
+  }
+];
+
+function renderMerch() {
+  const grid = document.getElementById('merch-grid');
+  if (!grid) return;
+  
+  grid.innerHTML = '';
+  
+  merchItems.forEach((item, index) => {
+    const card = document.createElement('div');
+    card.className = 'merch-card';
+    card.style.animationDelay = `${index * 0.1}s`;
+    card.innerHTML = `
+      <div class="merch-image">
+        <span class="merch-preview">${item.emoji}</span>
+        ${item.badge ? `<span class="merch-badge">${item.badge}</span>` : ''}
+      </div>
+      <div class="merch-info">
+        <h3 class="merch-title">${item.name}</h3>
+        <p class="merch-description">${item.description}</p>
+        <div class="merch-price">${item.price}</div>
+        <button class="merch-btn ${!item.available ? 'coming-soon' : ''}" ${!item.available ? 'disabled' : ''}>
+          ${item.available ? 'Pre-Order' : 'Coming Soon'}
+        </button>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+// Initialize merch on load
+document.addEventListener('DOMContentLoaded', () => {
+  renderMerch();
+});
