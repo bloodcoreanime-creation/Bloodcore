@@ -239,6 +239,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Gallery functionality
   renderGallery();
   setupLightbox();
+
+  // Merch functionality
+  renderMerch();
+
+  // Active nav link highlighting
+  setupScrollSpy();
 });
 
 // Gallery data - production artwork
@@ -460,7 +466,23 @@ function renderMerch() {
   });
 }
 
-// Initialize merch on load
-document.addEventListener('DOMContentLoaded', () => {
-  renderMerch();
-});
+// Scroll spy for active nav highlighting
+function setupScrollSpy() {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + entry.target.id) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+  
+  sections.forEach(section => observer.observe(section));
+}
