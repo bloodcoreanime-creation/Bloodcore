@@ -94,6 +94,34 @@
         <div class="characters-grid" id="characters-grid">
           <!-- Characters will be dynamically inserted -->
         </div>
+
+        <!-- Character Detail Modal -->
+        <div id="character-modal" class="modal">
+          <div class="modal-content character-modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="character-detail-grid">
+              <div class="character-portrait-large">
+                <span id="modal-char-emoji" class="modal-emoji"></span>
+              </div>
+              <div class="character-info-panel">
+                <h2 id="modal-char-name"></h2>
+                <div id="modal-char-core" class="modal-core-badge"></div>
+                <div class="modal-section">
+                  <h3>Backstory</h3>
+                  <p id="modal-char-backstory"></p>
+                </div>
+                <div class="modal-section">
+                  <h3>Abilities</h3>
+                  <ul id="modal-char-abilities" class="modal-abilities-list"></ul>
+                </div>
+                <div class="modal-section">
+                  <h3>Signature Move</h3>
+                  <div id="modal-char-signature" class="signature-move"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Episodes Section -->
@@ -110,6 +138,27 @@
         <div class="episodes-timeline" id="episodes-timeline">
           <!-- Episodes will be dynamically inserted -->
         </div>
+
+        <!-- Episode Reader Modal -->
+        <div id="episode-reader" class="modal reader-modal">
+          <div class="modal-content reader-content">
+            <button class="modal-close">&times;</button>
+            <div class="reader-header">
+              <h2 id="reader-title">Episode 1</h2>
+              <span id="reader-subtitle">The History of Blood Core</span>
+            </div>
+            <div class="reader-view">
+              <div class="panel-container" id="panel-container">
+                <!-- Manga panels will be inserted here -->
+              </div>
+              <button class="reader-prev" id="reader-prev">&#10094;</button>
+              <button class="reader-next" id="reader-next">&#10095;</button>
+            </div>
+            <div class="reader-progress">
+              <div class="progress-bar" id="reader-progress-bar"></div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Production Gallery Section -->
@@ -123,6 +172,29 @@
         <div class="gallery-grid" id="gallery-grid">
           <!-- Gallery items will be dynamically inserted -->
         </div>
+        
+        <!-- Fan Art Submission -->
+        <div class="fan-art-submission">
+          <div class="submission-header">
+            <h3>Submit Your Fan Art</h3>
+            <p>Join the Blood Core community by sharing your own creations!</p>
+          </div>
+          <form id="fan-art-form" class="submission-form">
+            <div class="form-row">
+              <input type="text" id="artist-name" placeholder="Artist Name" required>
+              <input type="email" id="artist-email" placeholder="Your Email" required>
+            </div>
+            <input type="text" id="art-title" placeholder="Artwork Title" required>
+            <textarea id="art-description" placeholder="Tell us about your masterpiece..." rows="3"></textarea>
+            <div class="file-input-wrapper">
+              <button type="button" class="file-btn">Choose Image</button>
+              <input type="file" id="art-file" accept="image/*" required>
+              <span id="file-name">No file chosen</span>
+            </div>
+            <button type="submit" class="submit-btn">Submit Artwork</button>
+          </form>
+        </div>
+
         <div class="gallery-lightbox" id="lightbox">
           <button class="lightbox-close">&times;</button>
           <button class="lightbox-prev">&#10094;</button>

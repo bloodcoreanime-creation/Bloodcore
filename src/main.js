@@ -1,37 +1,52 @@
 import './style.css'
 
-// Character data from the presentation
+// Character data with expanded backstories and abilities
 const characters = {
   heroes: [
     {
       name: 'Yorudan',
       core: 'Blood Core',
       emoji: '🩸',
-      description: 'The 11-year-old protagonist. Passionate and never backs down on his dreams. His blood itself becomes a weapon.'
+      description: 'The 11-year-old protagonist. Passionate and never backs down on his dreams. His blood itself becomes a weapon.',
+      backstory: 'Born into a seemingly ordinary family, Yorudan discovered his Blood Core power during a fit of rage at school. His grandfather Jakusan was the legendary Blood Core user whose power became myth 60 years ago. Now Yorudan must learn to control this volatile power before it consumes him.',
+      abilities: ['Blood Manipulation', 'Emotion Sensing', 'Memory Manipulation', 'Psychic Links'],
+      signature: 'Blood Storm Barrage'
     },
     {
       name: 'Kata',
       core: 'Bone Core',
       emoji: '🦴',
-      description: "Yorudan's best friend with the ego no one can take away. A serious, stoic swordsman who contrasts Yorudan's cheerful nature."
+      description: "Yorudan's best friend with the ego no one can take away. A serious, stoic swordsman who contrasts Yorudan's cheerful nature.",
+      backstory: 'Kata trained from age 5 in the ancient sword arts. When his Bone Core awakened, he could forge weapons from his own skeleton. Despite his cold exterior, he is fiercely loyal to those he calls friends.',
+      abilities: ['Bone Blade Creation', 'Skeletal Armor', 'Bone Density Control', 'Rapid Healing'],
+      signature: 'Thousand Bone Slash'
     },
     {
       name: 'Zabieru',
       core: 'Muscle Core',
       emoji: '💪',
-      description: 'Strong and loyal friend who joins the journey. His Muscle Core focuses on his arms, making him a formidable combatant.'
+      description: 'Strong and loyal friend who joins the journey. His Muscle Core focuses on his arms, making him a formidable combatant.',
+      backstory: 'Growing up in a mining village, Zabieru always had incredible strength. His Muscle Core allows him to amplify his already impressive physical abilities tenfold. He joined Yorudan after being saved from the M.E.F.',
+      abilities: ['Super Strength', 'Muscle Expansion', 'Impact Absorption', 'Titan Grip'],
+      signature: 'Mountain Crusher Fist'
     },
     {
       name: 'Keira',
       core: 'Unknown',
       emoji: '✨',
-      description: "Yorudan's sister. Joyful and always happy, bringing light to even the darkest situations."
+      description: "Yorudan's sister. Joyful and always happy, bringing light to even the darkest situations.",
+      backstory: 'Keira is younger than Yorudan but possesses a mysterious power that has not yet awakened. Her unwavering optimism keeps the team motivated. Some believe she may hold an even rarer Core than Blood.',
+      abilities: ['Unknown Potential', 'Aura of Hope', 'Emotional Stability', 'Hidden Power'],
+      signature: '???'
     },
     {
       name: 'Soraia',
       core: 'Nostril Core',
       emoji: '👃',
-      description: 'Former enemy turned ally. Goofy on the outside but deadly on the inside. Can control scents and manipulate emotions.'
+      description: 'Former enemy turned ally. Goofy on the outside but deadly on the inside. Can control scents and manipulate emotions.',
+      backstory: 'Once a spy for the M.E.F., Soraia defected after witnessing their cruelty. Her unique Nostril Core lets her sense danger, track anyone, and even influence emotions through pheromones.',
+      abilities: ['Scent Tracking', 'Emotion Manipulation', 'Pheromone Control', 'Danger Detection'],
+      signature: 'Nightmare Fog'
     }
   ],
   villains: [
@@ -39,31 +54,46 @@ const characters = {
       name: 'Taison',
       core: 'Multiple Cores',
       emoji: '👹',
-      description: 'The main antagonist, similar to Sukuna. Powerful and enigmatic with sinister charm. Masters multiple Core abilities.'
+      description: 'The main antagonist, similar to Sukuna. Powerful and enigmatic with sinister charm. Masters multiple Core abilities.',
+      backstory: 'An ancient being who has lived for centuries by absorbing other Core users. Taison seeks the Blood Core to complete his collection and achieve ultimate power. He views Yorudan as both a threat and a prize.',
+      abilities: ['Core Absorption', 'Multi-Core Mastery', 'Immortality', 'Domain Expansion'],
+      signature: 'Absolute Dominion'
     },
     {
       name: 'Jeison',
       core: 'Spirit Core',
       emoji: '👻',
-      description: 'Leader of the M.E.F. organization. Superior strength and speed. Takes thin air and molds it with willpower.'
+      description: 'Leader of the M.E.F. organization. Superior strength and speed. Takes thin air and molds it with willpower.',
+      backstory: 'Founder of the M.E.F. (Modern Enhancement Force), Jeison believes Core users should rule over normal humans. His Spirit Core grants him ghost-like abilities and immense combat prowess.',
+      abilities: ['Intangibility', 'Air Manipulation', 'Spirit Projection', 'Willpower Constructs'],
+      signature: 'Phantom Execution'
     },
     {
       name: 'Asan',
       core: 'Regeneration Core',
       emoji: '♻️',
-      description: 'M.E.F. member with a cold heart. Has the power to regenerate his body parts.'
+      description: 'M.E.F. member with a cold heart. Has the power to regenerate his body parts.',
+      backstory: 'Asan was experimented on as a child, unlocking his Regeneration Core. Now emotionless and calculating, he serves as the M.E.F.\'s enforcer, nearly impossible to kill permanently.',
+      abilities: ['Instant Regeneration', 'Limb Regrowth', 'Pain Immunity', 'Cellular Control'],
+      signature: 'Endless Revival'
     },
     {
       name: 'Al-e',
       core: 'Heat Core',
       emoji: '🔥',
-      description: 'M.E.F. member who can shoot fire from fingertips and mold objects like a fire sword.'
+      description: 'M.E.F. member who can shoot fire from fingertips and mold objects like a fire sword.',
+      backstory: 'Al-e discovered his Heat Core during a house fire that should have killed him. Instead, he emerged unharmed and gained control over flames. He joined M.E.F. seeking purpose and power.',
+      abilities: ['Pyrokinesis', 'Heat Immunity', 'Flame Weapons', 'Thermal Vision'],
+      signature: 'Inferno Blade Dance'
     },
     {
       name: 'Kaylah',
       core: 'Illusion Core',
       emoji: '🎭',
-      description: 'Can trick peoples eyes and create any illusion she wants, for good or for bad.'
+      description: 'Can trick peoples eyes and create any illusion she wants, for good or for bad.',
+      backstory: 'A master deceiver, Kaylah uses her Illusion Core to manipulate perception itself. No one knows her true appearance or motives. She plays all sides for her own mysterious agenda.',
+      abilities: ['Visual Illusions', 'Memory Alteration', 'Shapeshifting Facade', 'Mass Hypnosis'],
+      signature: 'Realm of Mirrors'
     }
   ],
   mentors: [
@@ -71,25 +101,37 @@ const characters = {
       name: 'Jakusan',
       core: 'Blood Core',
       emoji: '👴',
-      description: "Yorudan's grandfather. The legendary Blood Core user whose power became myth. Wise and mysterious with immense knowledge."
+      description: "Yorudan's grandfather. The legendary Blood Core user whose power became myth. Wise and mysterious with immense knowledge.",
+      backstory: '60 years ago, Jakusan was the most powerful Core user alive. He defeated Erumo in an epic battle that became legend. Now elderly, he guides Yorudan in mastering the Blood Core before time runs out.',
+      abilities: ['Blood Core Mastery', 'Ancient Techniques', 'Core Sensing', 'Life Transfer'],
+      signature: 'Crimson Eclipse'
     },
     {
       name: 'Muhanmado',
       core: 'Brain + Eye Core',
       emoji: '👁️',
-      description: 'Similar to Gojo. Super smart and always calm. Grants incredible mental and visual abilities. Serves as mentor to Yorudan.'
+      description: 'Similar to Gojo. Super smart and always calm. Grants incredible mental and visual abilities. Serves as mentor to Yorudan.',
+      backstory: 'The strongest active Core user and Yorudan\'s primary teacher. His dual-Core combination makes him nearly invincible. He sees potential in Yorudan that others cannot.',
+      abilities: ['Infinite Perception', 'Prediction', 'Telekinesis', 'Mind Reading'],
+      signature: 'All-Seeing Barrier'
     },
     {
       name: 'Karu',
       core: 'Brain Core',
       emoji: '🧠',
-      description: "Yorudan's father. Smart and intelligent, always looks one step ahead. Analytical and calm."
+      description: "Yorudan's father. Smart and intelligent, always looks one step ahead. Analytical and calm.",
+      backstory: 'A brilliant strategist and Yorudan\'s father. Karu uses his Brain Core for tactical planning and always stays several moves ahead of enemies. He supports his son from the shadows.',
+      abilities: ['Super Intelligence', 'Perfect Memory', 'Tactical Analysis', 'Probability Calculation'],
+      signature: 'Absolute Strategy'
     },
     {
       name: 'Hanifa',
       core: 'Heart Core',
       emoji: '❤️',
-      description: "Yorudan's mother. Intelligent doctor with accelerated healing powers. Represents empathy and emotional strength."
+      description: "Yorudan's mother. Intelligent doctor with accelerated healing powers. Represents empathy and emotional strength.",
+      backstory: 'A renowned doctor and Yorudan\'s loving mother. Hanifa\'s Heart Core allows her to heal others and sense emotions. She worries for her son but believes in his destiny.',
+      abilities: ['Accelerated Healing', 'Emotion Reading', 'Vital Transfer', 'Life Force Boost'],
+      signature: 'Heart\'s Embrace'
     }
   ]
 };
@@ -146,16 +188,39 @@ function renderCharacters(category = 'heroes') {
   
   characters[category].forEach((char, index) => {
     const card = document.createElement('div');
-    card.className = 'character-card';
+    card.className = 'character-card clickable';
     card.style.animationDelay = `${index * 0.1}s`;
     card.innerHTML = `
       <div class="character-avatar">${char.emoji}</div>
       <h3 class="character-name">${char.name}</h3>
       <span class="character-core">${char.core}</span>
       <p class="character-description">${char.description}</p>
+      <div class="card-hint">View Details</div>
     `;
+    card.addEventListener('click', () => openCharacterModal(char));
     grid.appendChild(card);
   });
+}
+
+// Character Modal Logic
+function openCharacterModal(char) {
+  const modal = document.getElementById('character-modal');
+  document.getElementById('modal-char-emoji').textContent = char.emoji;
+  document.getElementById('modal-char-name').textContent = char.name;
+  document.getElementById('modal-char-core').textContent = char.core;
+  document.getElementById('modal-char-backstory').textContent = char.backstory;
+  document.getElementById('modal-char-signature').textContent = char.signature;
+  
+  const abilitiesList = document.getElementById('modal-char-abilities');
+  abilitiesList.innerHTML = '';
+  char.abilities.forEach(ability => {
+    const li = document.createElement('li');
+    li.textContent = ability;
+    abilitiesList.appendChild(li);
+  });
+  
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
 }
 
 // Render episodes
@@ -165,17 +230,65 @@ function renderEpisodes(season = 1) {
   
   episodes[season].forEach((ep, index) => {
     const card = document.createElement('div');
-    card.className = 'episode-card';
+    card.className = 'episode-card clickable';
     card.style.animationDelay = `${index * 0.1}s`;
     card.innerHTML = `
       <div class="episode-number">${ep.num}</div>
       <div class="episode-content">
         <h3 class="episode-title">${ep.title}</h3>
         <p class="episode-summary">${ep.summary}</p>
+        <span class="read-more">Read Panel &#10142;</span>
       </div>
     `;
+    card.addEventListener('click', () => openEpisodeReader(ep));
     timeline.appendChild(card);
   });
+}
+
+// Episode Reader Logic
+let currentPanelIndex = 0;
+const totalPanels = 4; // Simulated panels for now
+
+function openEpisodeReader(ep) {
+  const reader = document.getElementById('episode-reader');
+  document.getElementById('reader-title').textContent = `Episode ${ep.num}`;
+  document.getElementById('reader-subtitle').textContent = ep.title;
+  
+  currentPanelIndex = 0;
+  updateReaderPanel();
+  
+  reader.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function updateReaderPanel() {
+  const container = document.getElementById('panel-container');
+  const progress = document.getElementById('reader-progress-bar');
+  
+  container.innerHTML = `
+    <div class="panel-placeholder">
+      <div class="manga-panel-content">
+        <h3>Panel ${currentPanelIndex + 1}</h3>
+        <p>Storyboard visualization for the scene where the action unfolds...</p>
+        <div class="sketch-effect"></div>
+      </div>
+    </div>
+  `;
+  
+  progress.style.width = `${((currentPanelIndex + 1) / totalPanels) * 100}%`;
+}
+
+function navigateReader(direction) {
+  currentPanelIndex += direction;
+  if (currentPanelIndex < 0) currentPanelIndex = 0;
+  if (currentPanelIndex >= totalPanels) {
+    if (confirm("You've reached the end of the preview. Close reader?")) {
+      closeAllModals();
+    }
+    currentPanelIndex = totalPanels - 1;
+    return;
+  }
+  updateReaderPanel();
 }
 
 // Event listeners
@@ -243,9 +356,53 @@ document.addEventListener('DOMContentLoaded', () => {
   // Merch functionality
   renderMerch();
 
+  // Modal close handlers
+  document.querySelectorAll('.modal-close').forEach(btn => {
+    btn.addEventListener('click', closeAllModals);
+  });
+
+  document.querySelectorAll('.modal').forEach(modal => {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeAllModals();
+    });
+  });
+
+  // Reader navigation
+  document.getElementById('reader-prev').addEventListener('click', () => navigateReader(-1));
+  document.getElementById('reader-next').addEventListener('click', () => navigateReader(1));
+
+  // Fan Art Form
+  const fanArtForm = document.getElementById('fan-art-form');
+  const fileInput = document.getElementById('art-file');
+  const fileNameDisplay = document.getElementById('file-name');
+  const fileBtn = document.querySelector('.file-btn');
+
+  fileBtn.addEventListener('click', () => fileInput.click());
+  
+  fileInput.addEventListener('change', () => {
+    if (fileInput.files.length > 0) {
+      fileNameDisplay.textContent = fileInput.files[0].name;
+    } else {
+      fileNameDisplay.textContent = 'No file chosen';
+    }
+  });
+
+  fanArtForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const artist = document.getElementById('artist-name').value;
+    alert(`Thank you ${artist}! Your fan art has been submitted for review. It will appear in the gallery once approved!`);
+    fanArtForm.reset();
+    fileNameDisplay.textContent = 'No file chosen';
+  });
+
   // Active nav link highlighting
   setupScrollSpy();
 });
+
+function closeAllModals() {
+  document.querySelectorAll('.modal, .gallery-lightbox').forEach(m => m.classList.remove('active'));
+  document.body.style.overflow = '';
+}
 
 // Gallery data - production artwork
 const galleryImages = [
