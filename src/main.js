@@ -546,11 +546,11 @@ const merchItems = [
     available: true
   },
   {
-    name: 'CORE SLIDES',
-    description: 'Luxury leather slides with embossed Blood Core logo and gold buckle',
-    price: '$68',
-    image: '/merch-slides.png',
-    badge: 'Premium',
+    name: 'CORE BOSTON CLOGS',
+    description: 'Premium crimson suede clogs with gold buckle hardware and soft footbed',
+    price: '$88',
+    image: '/merch-clogs.png',
+    badge: 'Limited',
     available: true
   },
   {
